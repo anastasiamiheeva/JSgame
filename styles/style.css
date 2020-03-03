@@ -145,6 +145,13 @@ color: #FFF;
   border-radius: 9px; 
 }
 
+/* js */
 
+.checked {
+  background: url("../images/Rectangle.png") no-repeat;
+  background-position: left;
+  top: 0;
+  right: 275px;
+}  
 
 
