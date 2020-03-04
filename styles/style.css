@@ -154,13 +154,12 @@ color: #FFF;
   right: 275px;
 }  
 
-
-
 .three-card {
   display: flex;
   justify-content: space-around;
   align-content: center;
   align-items: center;
+  flex-flow: row wrap;
   height: 700px;
   width: 60%;
 }
@@ -168,7 +167,7 @@ color: #FFF;
 .six-card {
  display: flex;
  justify-content: space-around;
- align-content: center;
+ align-content: space-between;
  flex-flow: row wrap;
  height: 700px;
  width: 60%;
@@ -177,7 +176,7 @@ color: #FFF;
 .ten-card {
   display: flex;
   justify-content: space-around;
-  align-content: center;
+  align-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   height: 700px;
@@ -185,15 +184,21 @@ color: #FFF;
 }
 
 .flip-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 218px;
   height: 341px;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  perspective: 1000px;
 }
 
-.flip-card-front,.flip-card-back {
+.flip-card-front,
+.flip-card-back,
+.winner {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -205,9 +210,12 @@ color: #FFF;
 }
 .flip-card-back {
   background: url("../images/card.png") no-repeat;
-  
 }
 
-.flip-card.on-click {
+.on-click {
   transform: rotateY(180deg);
+}
+
+.winner {
+  background: url("../images/bugCard.png") no-repeat;
 }

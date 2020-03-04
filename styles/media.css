@@ -23,6 +23,15 @@
        font-size: 45px;
    }
 
+   .flip-card-front,
+   .flip-card-back,
+   .winner {
+    background-size: 175px 271px;
+    height: 269px;
+    width: 173px;
+    border-radius: 7px;
+  }
+
 }
 
 
