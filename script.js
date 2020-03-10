@@ -1,5 +1,5 @@
 const startMenu = document.getElementById('start-menu');
-const gameContainer = document.getElementById('game-container')
+const gameContainer = document.getElementById('game-container');
 const navButton = document.querySelectorAll('.nav__item');
 const btnStart = document.getElementById('button-start')
 const gameField = document.createElement('div');
@@ -14,8 +14,8 @@ let navButtonOnClick = (item) => {
     navButton.forEach((el) => {
       el.classList.remove('checked');
       this.classList.add('checked');
-    })
-  })
+    });
+  });
 }
 
 navButton.forEach(navButtonOnClick);
@@ -63,7 +63,7 @@ let btnStartOnClick = () => {
         getCards();
         numberOfCard = 10;
       }
-    };
+    }
   }
 
   getGameField() 
@@ -79,7 +79,7 @@ let btnStartOnClick = () => {
 
   let getStart = () => { 
     gameContainer.appendChild(startMenu);
-    gameField.remove()
+    gameField.remove();
     gameField.innerHTML = '';
   }
 
@@ -88,11 +88,11 @@ let btnStartOnClick = () => {
       flipCard.forEach(() => {
         this.classList.add('on-click');
         flipCard.forEach((item) => item.addEventListener('click', getStart))
-      })
-    })
+      });
+    });
   }
   flipCard.forEach(flipCardOnClick); 
 }
  
 
-btnStart.addEventListener('click', btnStartOnClick)
+btnStart.addEventListener('click', btnStartOnClick);
