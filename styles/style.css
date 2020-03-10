@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: url("../images/Background.png") no-repeat;
+  background: url("../images/Background.png");
   background-size: cover;
   max-height: 1024px;
   min-height: 550px;
@@ -160,17 +160,16 @@ color: #FFF;
   align-content: center;
   align-items: center;
   flex-flow: row wrap;
-  height: 700px;
+  
   width: 60%;
 }
 
 .six-card {
- display: flex;
- justify-content: space-around;
- align-content: space-between;
- flex-flow: row wrap;
- height: 700px;
- width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+  flex-flow: row wrap;
+  width: 60%;
 }
 
 .ten-card {
@@ -179,7 +178,6 @@ color: #FFF;
   align-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  height: 700px;
   width: 90%;
 }
 
@@ -204,12 +202,21 @@ color: #FFF;
   height: 100%;
   backface-visibility: hidden;
 }
+
 .flip-card-front {
   background: url("../images/losingCard.png") no-repeat;
   transform: rotateY(180deg); 
 }
+
 .flip-card-back {
   background: url("../images/card.png") no-repeat;
+  
+}
+
+.flip-card-back:hover {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  transform: rotate(-3.08deg); 
+  transition: .2s ease;
 }
 
 .on-click {

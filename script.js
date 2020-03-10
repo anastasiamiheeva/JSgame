@@ -7,6 +7,7 @@ const btnSimple = document.getElementById('simple');
 const btnMedium = document.getElementById('medium');
 const btnDifficult = document.getElementById('difficult');
 
+navButton[0].classList.add('checked');
 
 let navButtonOnClick = (item) => {
   item.addEventListener('click', function() {
@@ -26,7 +27,6 @@ let btnStartOnClick = () => {
   let numberOfCard;
 
   function getGameField() {
-
     let getCards = () => {
       const card = document.createElement('div');
       const cardBack = document.createElement('div');
@@ -39,34 +39,30 @@ let btnStartOnClick = () => {
       gameField.appendChild(card); 
       card.appendChild(cardFront);
       card.appendChild(cardBack);
-
     }
 
     if (btnSimple.classList.contains('checked')) {
-      gameField.classList.add('three-card')
+      gameField.className = 'three-card';
       for (i = 0; i < 3; i++) {
         getCards();
         numberOfCard = 3;
       }
-      return numberOfCard;
     }
 
     else if (btnMedium.classList.contains('checked')) {
-      gameField.classList.add('six-card')
+      gameField.className = 'six-card';
       for (i = 0; i < 6; i++) {
         getCards();
         numberOfCard = 6;
       }
-      return numberOfCard;
     }
-    
+
     else {
-      gameField.classList.add('ten-card')
+      gameField.className = 'ten-card';
       for (i = 0; i < 10; i++) {
         getCards();
         numberOfCard = 10;
       }
-      return numberOfCard;
     };
   }
 
@@ -81,16 +77,21 @@ let btnStartOnClick = () => {
     } 
   }
 
-  let flipCardOnClick = (item) => {
-    item.addEventListener('click', function() {
-      flipCard.forEach((el) => {
-        el.classList.remove('on-click');
+  let getStart = () => { 
+    gameContainer.appendChild(startMenu);
+    gameField.remove()
+    gameField.innerHTML = '';
+  }
+
+  let flipCardOnClick = (elem) => {
+    elem.addEventListener('click', function() {
+      flipCard.forEach(() => {
         this.classList.add('on-click');
+        flipCard.forEach((item) => item.addEventListener('click', getStart))
       })
     })
   }
-  
-  flipCard.forEach(flipCardOnClick);
+  flipCard.forEach(flipCardOnClick); 
 }
  
 
